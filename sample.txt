@@ -1,2 +1,5 @@
+<<<<<<< HEAD
 Hế lô!
 Konichiwa!
+=======
+>>>>>>> parent of 416b0ac (First edit of sample.txt)
