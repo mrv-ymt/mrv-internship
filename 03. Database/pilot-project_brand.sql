@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.29, for Win64 (x86_64)
 --
--- Host: localhost    Database: pilot-project-db
+-- Host: 127.0.0.1    Database: pilot-project
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version	5.5.5-10.4.8-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,12 +21,12 @@
 
 DROP TABLE IF EXISTS `brand`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `brand` (
   `brand_id` int(11) NOT NULL AUTO_INCREMENT,
   `brand_name` varchar(45) DEFAULT NULL,
-  `logo` text,
-  `description` text,
+  `logo` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
   PRIMARY KEY (`brand_id`),
   UNIQUE KEY `brand_name_UNIQUE` (`brand_name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8;
@@ -38,7 +38,7 @@ CREATE TABLE `brand` (
 
 LOCK TABLES `brand` WRITE;
 /*!40000 ALTER TABLE `brand` DISABLE KEYS */;
-INSERT INTO `brand` VALUES (1,'Apple','aplogo.png','Apple Inc, California'),(2,'Samsung','sslogo.jpg','Samsung Inc, Korea'),(3,'Oppo','oplogo.jpg','Oppo Inc, China'),(4,'Blackberry','blackberry-logo.jpg','Blackberry Inc, California'),(5,'LG','LG-logo-600x600.jpg','LG Inc, Japan'),(6,'Xiaomi','xiaomilogo.png','Xiaomi Inc, China'),(7,'Sony','sony_og_img.jpg','Sony Inc, Japan'),(8,'Nokia','Nokia-Logo-600x600.jpg','Nokia Inc, Korea'),(9,'Huawei','huawei.jpg','Huawei made in China'),(10,'Vivo','vivo-Phone-logo3-600x600.png','Vivo Inc, China'),(11,'HTC','HTC 600x600.png','HTC Inc, California'),(12,'Asus','assus.png','Asus Inc, China'),(13,'V Smart','vsmart.png','VinGroup Inc, Vietnam'),(14,'Realme','realme.png','Realme Inc, China');
+INSERT INTO `brand` VALUES (1,'Apple','images/brand/20210309-1437-8gokfk.png','Apple Inc, California'),(2,'Samsung','images/brand/20210309-1437-cg99ej.png','Samsung Inc, Korea'),(3,'Oppo','images/brand/20210309-1437-qj5ene.jpg','Oppo Inc, China'),(5,'LG','images/brand/20210309-1439-ani78t.png','LG Inc, Japan'),(6,'Xiaomi','images/brand/20210309-1439-s4bmfn.png','Xiaomi Inc, China'),(7,'Sony','images/brand/20210309-1439-vaq2li.png','Sony Inc, Japan'),(8,'Nokia','images/brand/20210309-1438-37rqj7.png','Nokia Inc, Korea'),(9,'Huawei','images/brand/20210309-1437-b084mp.png','Huawei made in China'),(10,'Vivo','images/brand/20210309-1435-4b1qbk.png','Vivo Inc, China'),(11,'HTC','images/brand/20210309-1435-od2srd.webp','HTC Inc, California'),(12,'Asus','images/brand/20210309-1435-v9tvd7.jpg','Asus Inc, China'),(13,'V Smart','images/brand/20210309-1435-bftm8q.webp','VinGroup Inc, Vietnam'),(14,'Realme','images/brand/20210309-1433-7p4s0q.png','Realme Inc, China');
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-10-17 11:26:55
+-- Dump completed on 2021-03-09 16:26:39
