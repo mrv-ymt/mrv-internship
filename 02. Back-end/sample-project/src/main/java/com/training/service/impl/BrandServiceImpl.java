@@ -45,8 +45,7 @@ public class BrandServiceImpl implements IBrandService {
 			String imagePath = FileHelper.addNewFile(brandLogoFolderPath, brandEntity.getLogoFiles());
 			brandEntity.setLogo(imagePath);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.error("Error when add file: " + brandEntity.getLogo(), e);
 		}
 		return brandDao.saveAndFlush(brandEntity);
 	}
@@ -62,8 +61,7 @@ public class BrandServiceImpl implements IBrandService {
 				brandEntity.setLogo(imagePath);
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			LOGGER.error("Error when edit file: " + brandEntity.getLogo(), e);
 		}
 		return brandDao.saveAndFlush(brandEntity);
 	}
@@ -80,8 +78,7 @@ public class BrandServiceImpl implements IBrandService {
 				// Remove logo of brand from store folder
 				FileHelper.deleteFile(brandEntity.getLogo());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				LOGGER.error("Error when delete file: " + brandEntity.getLogo(), e);
 			}
 		}
 		return null;
