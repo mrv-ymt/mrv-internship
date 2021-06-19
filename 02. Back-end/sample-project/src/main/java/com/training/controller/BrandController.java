@@ -61,6 +61,12 @@ public class BrandController {
 	public ResponseDataModel findBrandByIbApi(@RequestParam("id") Long brandId) {
 		return brandService.findBrandByIbApi(brandId);
 	}
+	
+	@GetMapping("/api/findAllBrandApi")
+	@ResponseBody
+	public ResponseDataModel findAllBrand() {
+		return brandService.findAllBrand();
+	}
 
 	@GetMapping("/api/findAll/{pageNumber}")
 	@ResponseBody

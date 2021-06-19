@@ -5,7 +5,7 @@ $(document).ready(function() {
 	$("header .nav-link").each(function() {
 		$this = $(this);
 		if (pathName.includes($this.attr("href"))) {
-			$this.parent().addClass("active");
+			$this.addClass("active");
 		}
 	});
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		}
 		$parent.find('.preview-image-upload img').attr('src', fileUrl);
 	});
-
+	
 	//Open image in full size
 	$(document).on('click', '[data-toggle="lightbox"]', function (event) {
 		event.preventDefault();
@@ -36,7 +36,41 @@ $(document).ready(function() {
 			alwaysShowClose: true
 		});
 	});
+	
+	$('.search-component .priceKey[id]').on('keyup' , function () {
+		var num = $(this).val();
+		if(num != "") {
+		num = cvStringToInt(num);
+		$(this).val(convertMoney(num));			
+		}else {
+			$(this).val("");
+		}
+	});	
+	$('#price[id]').on('keyup' , function () {
+		var num = $(this).val();
+		if(num != "") {
+		num = cvStringToInt(num);
+		$(this).val(convertMoney(num));			
+		}else {
+			$(this).val("");
+		}
+	});
+	
 });
+
+function convertMoney(currentMoney) {
+	numFM = new Intl.NumberFormat({
+		style: "currency",
+		currency: "VND"
+	});
+	return numFM.format(currentMoney);
+}
+
+function cvStringToInt(str) {
+        var newstr = str.replaceAll("." , "");
+        newstr = parseInt(newstr);
+        return newstr;
+    }
 
 /**
  * Add title for selected modal after that show modal
@@ -53,7 +87,6 @@ function showModalWithCustomizedTitle($selectedModal, title) {
  * @param $formElement
  */
 function resetFormModal($formElement) {
-
 	$formElement[0].reset();
 	$formElement.find("input[type*='file']").val("");
 	$formElement.validate().destroy();
@@ -83,7 +116,7 @@ function showNotification(isSuccess, message) {
 			message: message
 		}, {
 			type: 'danger',
-			delay: 6000
+			delay: 2000
 		});
 	}
 }

@@ -25,7 +25,6 @@ $(document).ready(function() {
 	$("#brandInfoTable").on('click', '.edit-btn', function() {
 
 		$("#brandLogo .required-mask").addClass("d-none");
-
 		// Get brand info by brand ID
 		$.ajax({
 			url : "/brand/api/find?id=" + $(this).data("id"),

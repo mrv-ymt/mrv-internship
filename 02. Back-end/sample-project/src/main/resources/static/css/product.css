@@ -1,0 +1,34 @@
+/*Reset CSS */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.search-component {
+	width: 100%;
+	margin: 20px 0 10px;
+}
+
+.search-component .search-item {
+	display: inline-block;
+	margin-left: 120px;
+	font-weight: 500;
+}
+
+.search-component  input {
+	border-radius: 5px;
+}
+
+.search-component  button {
+	font-size: 15px;
+}
+
+table th {
+	color: red;
+}
+
+table img {
+	width : auto;
+	height: auto;
+}

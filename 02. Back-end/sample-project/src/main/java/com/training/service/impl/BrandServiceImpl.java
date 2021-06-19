@@ -227,4 +227,21 @@ public class BrandServiceImpl implements IBrandService {
 		}
 		return new ResponseDataModel(responseCode, responseMsg);
 	}
+
+	@Override
+	public ResponseDataModel findAllBrand() {
+		int responseCode = Constants.RESULT_CD_FAIL;
+		String responseMsg = StringUtils.EMPTY;
+		List<BrandEntity> brandEntity = null ;
+		try {
+			brandEntity = brandDao.findAll();
+			if(brandEntity != null) {
+				responseCode = Constants.RESULT_CD_SUCCESS;
+			}
+		} catch (Exception e) {
+			responseMsg = "Error when finding all Brand";
+			LOGGER.error("Error when finding all Brand", e);
+		}
+		return new ResponseDataModel(responseCode, responseMsg, brandEntity);
+	}
 }

@@ -8,4 +8,8 @@ import com.training.entity.ProductEntity;
 
 @Repository
 public interface IProductDao extends JpaRepository<ProductEntity, Long>, JpaSpecificationExecutor<ProductEntity> {
+	
+	ProductEntity findByProductName(String productName);
+	ProductEntity findByProductId(Long productId);
+	ProductEntity findByProductNameAndProductIdNot(String productName, Long productId);
 }

@@ -6,7 +6,7 @@
 		<div class="d-flex">
 			<div class="main-logo">Pilot Project</div>
 			<a class="ml-5 nav-link" href="/product">Product</a>
-			<a class="nav-link active" href="/brand">Brand</a>
+			<a class="nav-link" href="/brand">Brand</a>
 		</div>
 	</div>
 </header>
